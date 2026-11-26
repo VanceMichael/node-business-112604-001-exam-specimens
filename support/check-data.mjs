@@ -11,6 +11,6 @@ assert.equal(new Set(records.records.map(r => r.recordId)).size, records.records
 for (const record of records.records) { assert.equal(typeof record.kind, 'string'); assert.equal(typeof record.payload, 'object'); }
 assert.ok(peer.operations.length > 0, '联调操作不可为空');
 assert.equal(new Set(peer.operations).size, peer.operations.length, '联调操作不可重复');
-for (const r of catalog.results) assert.ok(catalog.people.some(p => p.id === r.person), '样本所属人需存在');
-assert.ok(catalog.results.some(r => r.revision === 2), '保留来源修订');
+for (const sample of catalog.samples) assert.ok(catalog.people.some(p => p.id === sample.person));
+for (const item of catalog.tests) assert.ok(Number(item.minMl)>0);
 console.log('合成资料格式及领域引用核查通过');
