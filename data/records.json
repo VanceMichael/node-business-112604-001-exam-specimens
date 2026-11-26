@@ -1,0 +1,103 @@
+{
+  "synthetic": true,
+  "records": [
+    {
+      "recordId": "synthetic-01",
+      "kind": "packageOrder",
+      "payload": {
+        "orderId": "order-a",
+        "personId": "person-a",
+        "items": [
+          {
+            "testId": "test-a",
+            "amountMinor": 2000
+          }
+        ]
+      }
+    },
+    {
+      "recordId": "synthetic-02",
+      "kind": "consent",
+      "payload": {
+        "personId": "person-a",
+        "testId": "test-a",
+        "allowRemainingSample": true
+      }
+    },
+    {
+      "recordId": "synthetic-03",
+      "kind": "sample",
+      "payload": {
+        "sampleId": "tube-a"
+      }
+    },
+    {
+      "recordId": "synthetic-04",
+      "kind": "addTest",
+      "payload": {
+        "orderId": "order-a",
+        "testId": "test-b",
+        "amountMinor": 3000,
+        "sampleId": "tube-a"
+      }
+    },
+    {
+      "recordId": "synthetic-05",
+      "kind": "consent",
+      "payload": {
+        "personId": "person-a",
+        "testId": "test-b",
+        "allowRemainingSample": true
+      }
+    },
+    {
+      "recordId": "synthetic-06",
+      "kind": "aliquot",
+      "payload": {
+        "parentSampleId": "tube-a",
+        "sampleId": "child-a",
+        "ml": "3.0",
+        "testId": "test-b"
+      }
+    },
+    {
+      "recordId": "synthetic-07",
+      "kind": "commissionAccepted",
+      "payload": {
+        "requestId": "commission-1",
+        "commissionId": "lab-order-1",
+        "sampleId": "child-a",
+        "testId": "test-b",
+        "status": "received"
+      }
+    },
+    {
+      "recordId": "synthetic-08",
+      "kind": "consentWithdraw",
+      "payload": {
+        "personId": "person-a",
+        "testId": "test-b"
+      }
+    },
+    {
+      "recordId": "synthetic-09",
+      "kind": "labFact",
+      "payload": {
+        "commissionId": "lab-order-1",
+        "sampleId": "child-a",
+        "testId": "test-b",
+        "status": "testing",
+        "occurredAt": "2026-11-26T10:01:00+08:00"
+      }
+    },
+    {
+      "recordId": "synthetic-10",
+      "kind": "qualityHold",
+      "payload": {
+        "sampleId": "tube-a",
+        "reason": "合成污染待核",
+        "reviewer": "quality-a"
+      }
+    }
+  ]
+}

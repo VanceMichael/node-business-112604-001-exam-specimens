@@ -1,0 +1,67 @@
+{
+  "synthetic": true,
+  "people": [
+    {
+      "id": "person-a"
+    },
+    {
+      "id": "person-b"
+    }
+  ],
+  "tests": [
+    {
+      "id": "test-a",
+      "sampleType": "blood",
+      "minMl": "2.0",
+      "maxHours": 4,
+      "container": "tube-red",
+      "conditions": [
+        "fasting"
+      ]
+    },
+    {
+      "id": "test-b",
+      "sampleType": "blood",
+      "minMl": "3.0",
+      "maxHours": 6,
+      "container": "tube-red",
+      "conditions": []
+    }
+  ],
+  "samples": [
+    {
+      "id": "tube-a",
+      "person": "person-a",
+      "type": "blood",
+      "ml": "6.0",
+      "collectedAt": "2026-11-26T08:00:00+08:00",
+      "container": "tube-red",
+      "conditions": [
+        "fasting"
+      ]
+    },
+    {
+      "id": "tube-b",
+      "person": "person-b",
+      "type": "blood",
+      "ml": "4.0",
+      "collectedAt": "2026-11-26T08:00:00+08:00",
+      "container": "tube-red",
+      "conditions": []
+    }
+  ],
+  "actors": [
+    {
+      "id": "collector-a",
+      "role": "collector"
+    },
+    {
+      "id": "quality-a",
+      "role": "quality"
+    },
+    {
+      "id": "lab-a",
+      "role": "externalLab"
+    }
+  ]
+}

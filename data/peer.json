@@ -1,0 +1,18 @@
+{
+  "name": "外送检验及收单联调端",
+  "operations": [
+    "commission",
+    "cancel",
+    "pay",
+    "refund",
+    "correction"
+  ],
+  "identity_fields": [
+    "requestId",
+    "orderId",
+    "testId",
+    "sampleId",
+    "revision"
+  ],
+  "facts": "commission 结果含 commissionId、sampleId、testId 和 received/testing/completed 状态；cancel 可返回 cancelled 或 alreadyTesting。pay/refund 返回 paymentId、amountMinor 和实际发生时间。结果回执含 commissionId、sampleId、testId、revision。"
+}
