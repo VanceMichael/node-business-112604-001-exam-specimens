@@ -1,67 +1,82 @@
 {
   "synthetic": true,
   "people": [
-    {
-      "id": "person-a"
-    },
-    {
-      "id": "person-b"
-    }
+    { "id": "person-a", "name": "合成受检者甲" },
+    { "id": "person-b", "name": "合成受检者乙" }
   ],
   "tests": [
     {
       "id": "test-a",
+      "name": "合成空腹血液项目A",
       "sampleType": "blood",
       "minMl": "2.0",
       "maxHours": 4,
+      "retentionHours": 4,
       "container": "tube-red",
-      "conditions": [
-        "fasting"
-      ]
+      "allowedContainers": ["tube-red"],
+      "conditions": ["fasting"]
     },
     {
       "id": "test-b",
+      "name": "合成血液项目B",
       "sampleType": "blood",
       "minMl": "3.0",
       "maxHours": 6,
+      "retentionHours": 6,
       "container": "tube-red",
+      "allowedContainers": ["tube-red"],
       "conditions": []
+    }
+  ],
+  "packages": [
+    {
+      "id": "pkg-basic-a",
+      "name": "合成基础套餐",
+      "items": [
+        { "testId": "test-a", "amountMinor": 2000 }
+      ]
+    },
+    {
+      "id": "pkg-ab-split",
+      "name": "合成AB套餐（优惠已逐项分摊）",
+      "items": [
+        { "testId": "test-a", "amountMinor": 2000 },
+        { "testId": "test-b", "amountMinor": 2500 }
+      ]
     }
   ],
   "samples": [
     {
       "id": "tube-a",
       "person": "person-a",
+      "personId": "person-a",
       "type": "blood",
+      "sampleType": "blood",
       "ml": "6.0",
+      "actualMl": "6.0",
       "collectedAt": "2026-11-26T08:00:00+08:00",
       "container": "tube-red",
-      "conditions": [
-        "fasting"
-      ]
+      "conditions": ["fasting"]
     },
     {
       "id": "tube-b",
       "person": "person-b",
+      "personId": "person-b",
       "type": "blood",
+      "sampleType": "blood",
       "ml": "4.0",
+      "actualMl": "4.0",
       "collectedAt": "2026-11-26T08:00:00+08:00",
       "container": "tube-red",
       "conditions": []
     }
   ],
   "actors": [
-    {
-      "id": "collector-a",
-      "role": "collector"
-    },
-    {
-      "id": "quality-a",
-      "role": "quality"
-    },
-    {
-      "id": "lab-a",
-      "role": "externalLab"
-    }
+    { "id": "frontdesk-a", "role": "frontdesk", "roles": ["frontdesk"], "name": "合成前台" },
+    { "id": "doctor-a", "role": "doctor", "roles": ["doctor"], "name": "合成医生" },
+    { "id": "collector-a", "role": "collector", "roles": ["collector"], "name": "合成采样员" },
+    { "id": "inspector-a", "role": "inspector", "roles": ["inspector"], "name": "合成检验确认人员" },
+    { "id": "quality-a", "role": "quality", "roles": ["quality"], "name": "合成质量人员" },
+    { "id": "lab-a", "role": "externalLab", "roles": ["externalLab"], "name": "合成外送检验方" }
   ]
 }
